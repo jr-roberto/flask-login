@@ -1,0 +1,10 @@
+*downloads/
+*download/
+*__pycache__/
+*env/
+*.xlsx
+*.zip
+*.xls
+*cookies.json
+*.lock
+*roberto/
