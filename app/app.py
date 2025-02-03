@@ -3,11 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
 
 # Configuração do banco de dados MySQL
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://admin:rS5mQ5CTc22MD02F@localhost/applogin"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.secret_key = "supersecretkey"
 
 db = SQLAlchemy(app)
 
@@ -31,6 +31,6 @@ app.register_blueprint(dashboard_bp, url_prefix="/dashboard")
 if __name__ == "__main__":
     # Garante que a criação das tabelas ocorra dentro do contexto da aplicação
     with app.app_context() as a:
-        db.create_all()
+        pass
 
     app.run(debug=True, port=2025)
