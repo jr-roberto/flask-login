@@ -20,4 +20,3 @@ class Usuarios(UserMixin, db.Model):
     def __repr__(self):
         return f'<Usuario {self.nome}>'
     
-    

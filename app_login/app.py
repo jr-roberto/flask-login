@@ -23,8 +23,12 @@ login_manager.login_view = "auth.login"
 def load_user(user_id):
     return Usuarios.query.get(user_id)
 
+# REGISTRO DE APLICATIVOS
 from routes.auth import auth
 app.register_blueprint(auth)
+
+from routes.api import api
+app.register_blueprint(api)
 
 if __name__=="__main__":
     app.run(debug=True, port=2025)
