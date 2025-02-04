@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <div class="conteudo">
+
+        <div class="menu">
+            <ul>
+                <li><a href="{{ url_for('auth.registro') }}">Novo usuario</a></li>
+            </ul>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome de usuario</th>
+                        <th>E-mail</th>
+                        <th>Tipo de usuario</th>
+                        <th>-</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{ usuario.nome }}</td>
+                            <td>{{ usuario.email }}</td>
+                            <td>{{ usuario.permissao }}</td>
+                            <td>
+                                <a href="{{ url_for('dash.usuarios.editar',id_usuario=usuario.id) }}" target="_blank" rel="noopener noreferrer">{{ usuario.id  }}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    
+
+{% endblock conteudo %}

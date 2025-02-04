@@ -1,0 +1,58 @@
+:root {
+    --height-header-top: 80px;
+}
+
+*{margin: 0; box-sizing: border-box;}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body > div.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div.app > header {
+    height: 80px;
+    background-color: black;
+    width: 100%;
+}
+
+div.app > main {
+    height: calc(100% - var(--height-header-top));
+    /* background-color: #c0c0c0; */
+    width: 100%;
+    overflow-y: auto;
+}
+
+form.login,
+form.create {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+form.login input, form.login select,
+form.create input, form.create select{
+    padding: .3rem .5rem;
+}
+
+form.login label,
+form.create label {
+    margin-top: .5rem;
+    font-size: small;
+    color: gray;
+}
+
+form.login input[type="submit"],
+form.create input[type="submit"] {
+    margin-top: 1rem;
+    padding: .5rem;
+    cursor: pointer;
+}
