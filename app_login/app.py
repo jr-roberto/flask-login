@@ -23,10 +23,6 @@ login_manager.login_view = "auth.login"
 def load_user(user_id):
     return Usuarios.query.get(user_id)
 
-with app.app_context():
-    db.create_all()
-    seed_usuario_master()
-
 # REGISTRO DE APLICATIVOS
 from routes.auth import auth
 app.register_blueprint(auth)
